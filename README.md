@@ -17,7 +17,8 @@ In this project, I simulate an industry-like network and showcase the implementa
     - 🗝 Access Control Lists
     - 🗝 AAA Authentication
     - 🗝 Other Industry Best Practices
-
+ 
+- ✨ [Conclusion](#conclusion) 
 
 # Topology Network Design
 _The topology diagram represents the simulated network configuration. It provides an overview of the network devices and their interconnections._
@@ -228,7 +229,7 @@ Using secure protocols and preventing insecure protocols improves network securi
 
 ![image](https://github.com/Muneer44/Network-Security/assets/117259069/471da4c5-b317-46f7-ae0d-55e32648d2fa)
 
-# Conclusion
+# ✨Conclusion
 Through this project, I try to emphasize the importance of securing network infrastructure, protecting sensitive information, and optimizing network performance. By implementing robust security controls and utilizing advanced networking configurations the organizations can mitigate security risks and enhance the overall network resilience.
 
 **All together, this project has enhanced my knowledge of network security and gave me valuable insights into it's real-world implications. I continue to strive to educate myself further each day, and this is just one of the many practical projects I've worked on.
