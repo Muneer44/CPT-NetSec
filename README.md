@@ -1,25 +1,25 @@
-# Network-Security
-Simulating real-world organization network configuration and security using Cisco Packet Tracer.
+# CPT-NetSec: Simulating Advance Network Configurations and Security Controls using Cisco Packet Tracer 
+In this project I simulate an industry-like network and showcase the implementation of network security controls and advanced networking configurations using Cisco Packet Tracer. The simulated network includes elements such as OSPF implementation, access control list configurations, port access security and so on. It serves as a practical example of industry best practices for network security and advanced network design.
 
 ## Table of Contents
-### Security controls and Advanced networking configuration:
-- [📍 Topology: Network Design](#topology:-simulated-network-design)
+- [📍 Topology Network Design](#topology-network-design)
 - [🗺 Network Connectivity Map](#network-connectivity-map)
-- [⛓ Advanced Network Configuration](#advanced-network-configuration)
-    - [🔗 VLAN segmentation and Trunk Creation](#VLAN-Segmentation)
+  
+- [⛓ Advanced Network Configurations](#advanced-network-configuration)
+    - 🔗 VLAN segmentation and Trunk Creation
     - 🔗 Router On Stick Configuration
     - 🔗 OSPF implementation
     - 🔗 DR and BDR Assignments
     - 🔗 Stubby Area Creation
 
-- 🔐 Network Security Controls:
-    - [🗝 Port Access Security](#Port-access-security)
-    - [🗝 Access Control Lists](#ACL)
-    - [🗝 AAA Authentication](#AAA-Authntication)
-    - [🗝 Industry Best Practices](#Industry)
+- 🔐 [Network Security Controls](#-network-security-controls)
+    - 🗝 Port Access Security
+    - 🗝 Access Control Lists
+    - 🗝 AAA Authentication
+    - 🗝 Other Industry Best Practices
 
 
-# Topology: Network Design
+# Topology Network Design
 _The topology diagram represents the simulated network configuration. It provides an overview of the network devices and their interconnections._
 
 <img src="https://github.com/Muneer44/Security-Onion-Traffic-Analysis/assets/117259069/fd9aad62-e6d5-4281-ab0e-57646a641837" alt = "Network Topology Diagram" width="700" height="500">
@@ -152,18 +152,28 @@ SwitchA# sh port-security
 
 # 🗝 Access Control Lists
 #### _**Scenario A:**_  
-![image](https://github.com/Muneer44/Network-Security/assets/117259069/2ae9a522-46c9-4710-b7b4-480b3d58301f)
-![image](https://github.com/Muneer44/Network-Security/assets/117259069/00685b0f-f986-49a2-b3a0-d7217b259b1c)  
+<img src="https://github.com/Muneer44/Network-Security/assets/117259069/2ae9a522-46c9-4710-b7b4-480b3d58301f" width="550" height="100"> <br>
+<img src="https://github.com/Muneer44/Network-Security/assets/117259069/03a5e60f-8f61-4117-88f1-f6e9a1999132" width="820" height="430"> <br>
 _Demonstrates denial of SSH and Telnet traffic from 192.168.20.x Vlan network to host 172.16.1.2 (GW router)_  
-
-```
-
-```  
   
 #### _**Scenario B:**_  
-![image](https://github.com/Muneer44/Network-Security/assets/117259069/50fbddfa-a0ae-4bbe-97ac-923bb7efe96e)
-![image](https://github.com/Muneer44/Network-Security/assets/117259069/49e8b120-55a3-4445-8bf1-075a192f460f)    
-_Demonstrates denial of traffic from host 172.16.3.7 Attacker-ACL-PC to 192.168.x.x network_
+<img src="https://github.com/Muneer44/Network-Security/assets/117259069/50fbddfa-a0ae-4bbe-97ac-923bb7efe96e" width="550" height="100"> <br>
+<img src="https://github.com/Muneer44/Network-Security/assets/117259069/7173f712-12a2-4200-a6ed-1eedd9986244" width="820" height="430"> <br>
+_Demonstrates denial of traffic from host 172.16.3.7 (Attacker-BR-PC) to 192.168.x.x network_
+
+```
+# Create Access Control List
+    Branch(config)# ip access-list extended <ACL name>
+    Branch(config-ext-nacl)# deny <protocl> <source ip> <source wildcard mask> <destination ip> <destination wildcard mask> eq 22  # Keywords: 'host' and 'any'  
+
+# Apply ACL
+    Branch(config)# int <interface>  
+    Branch(config-if)# ip access-group <ACL name> <in/ out> 
+    
+Branch(config-ext-nacl)# do sh ip access-lists
+
+# Best practice: choose the device closest to the source.
+```
 
 ---
 
@@ -173,6 +183,23 @@ AAA authentication, Authentication, Authorization and Accounting, refers to the 
 ![image](https://github.com/Muneer44/Network-Security/assets/117259069/da16c451-7391-48dd-a61b-8397cb88cb60) <img src="https://github.com/Muneer44/Network-Security/assets/117259069/377c1afb-bced-4ecf-8579-46accb4cf004" width="280" height="210">    
 
 <img src="https://github.com/Muneer44/Network-Security/assets/117259069/bdcc05fb-ee4a-4955-a10d-35bcef7ec6b2" width="480" height="100">     
+
+```
+# Device login authentication
+    GW(config)# username <uid> secret <pwd>    # Create local username and pwd
+    GW(config)# aaa new-model    # Enable AAA auth model
+    GW(config)# aaa authentication login <auth list name> <local / local-case>  # local-case = case sensitive uids  
+    GW(config)# line console <consolel ine (0)> 
+    GW(config-line)# login authentication <auth list name> # Implement auth on console
+
+# Remote access authenticaiton
+    GW(config)# ip domain-name <name>    # Create a domain
+    GW(config)# crypto key generate rsa    # Create cryptographic key    
+    GW(config)# line vty <lines (0 4)>
+    GW(config)# login authentication <auth list>    # Implement auth on vty (remote access)
+    GW(config)# transport input ssh    # Allow only ssh access
+
+```
  
 ---
 
@@ -201,3 +228,9 @@ Storing hashed console and remote acces credentials mitigates the risk of passwo
 Using secure protocols and preventing insecure protocols improves network security by encrypting communication, thereby safeguards against unauthorized access to sensitive information through potential attacks like eavesdropping.  
 
 ![image](https://github.com/Muneer44/Network-Security/assets/117259069/471da4c5-b317-46f7-ae0d-55e32648d2fa)
+
+# Conclusion
+Through this project, I try to emphasize the importance of securing network infrastructure, protecting sensitive information, and optimizing network performance. By implementing robust security controls and utilizing advanced networking configurations the organizations can mitigate security risks and enhance the overall network resilience.
+
+**All together, this project has enhanced my knowledge of network security and gave me valuable insights into it's real-world implications. I continue to strive to educate myself further each day, and this is just one of the many practical projects I've worked on.
+You can view my portfolio [here](https://github.com/Muneer44/)**  
