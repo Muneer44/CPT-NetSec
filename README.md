@@ -2,7 +2,7 @@
 In this project, I simulate an industry-like network and showcase the implementation of network security controls and advanced networking configurations using Cisco Packet Tracer. The simulated network includes elements such as OSPF implementation, access control list configurations, port access security and so on. It serves as a practical example of industry best practices for network security and advanced network design.
 
 ## Table of Contents
-- [📍 Topology Network Design](#topology-network-design)
+- [📍 Network Topology](#network-topology)
 - [🗺 Network Connectivity Map](#network-connectivity-map)
   
 - [⛓ Advanced Network Configurations](#advanced-network-configuration)
@@ -20,7 +20,7 @@ In this project, I simulate an industry-like network and showcase the implementa
  
 - ✨ [Conclusion](#conclusion) 
 
-# Topology Network Design
+# Network Topology  
 _The topology diagram represents the simulated network configuration. It provides an overview of the network devices and their interconnections._
 
 <img src="https://github.com/Muneer44/CPT-NetSec/assets/117259069/c9cac78a-678d-4657-8947-2d403e194cd0" alt = "Network Topology Diagram" width="900" height="500">
