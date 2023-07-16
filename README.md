@@ -1,5 +1,5 @@
 # CPT-NetSec: Simulating Advance Network Configurations and Security Controls using Cisco Packet Tracer 
-In this project I simulate an industry-like network and showcase the implementation of network security controls and advanced networking configurations using Cisco Packet Tracer. The simulated network includes elements such as OSPF implementation, access control list configurations, port access security and so on. It serves as a practical example of industry best practices for network security and advanced network design.
+In this project, I simulate an industry-like network and showcase the implementation of network security controls and advanced networking configurations using Cisco Packet Tracer. The simulated network includes elements such as OSPF implementation, access control list configurations, port access security and so on. It serves as a practical example of industry best practices for network security and advanced network design.
 
 ## Table of Contents
 - [📍 Topology Network Design](#topology-network-design)
@@ -153,12 +153,12 @@ SwitchA# sh port-security
 #### _**Scenario A:**_  
 <img src="https://github.com/Muneer44/Network-Security/assets/117259069/2ae9a522-46c9-4710-b7b4-480b3d58301f" width="550" height="100"> <br>
 <img src="https://github.com/Muneer44/Network-Security/assets/117259069/03a5e60f-8f61-4117-88f1-f6e9a1999132" width="820" height="430"> <br>
-_Demonstrates denial of SSH and Telnet traffic from 192.168.20.x Vlan network to host 172.16.1.2 (GW router)_  
+_Demonstrates the denial of SSH and Telnet traffic from 192.168.20.x Vlan network to host 172.16.1.2 (GW router)_  
   
 #### _**Scenario B:**_  
 <img src="https://github.com/Muneer44/Network-Security/assets/117259069/50fbddfa-a0ae-4bbe-97ac-923bb7efe96e" width="550" height="100"> <br>
 <img src="https://github.com/Muneer44/Network-Security/assets/117259069/7173f712-12a2-4200-a6ed-1eedd9986244" width="820" height="430"> <br>
-_Demonstrates denial of traffic from host 172.16.3.7 (Attacker-BR-PC) to 192.168.x.x network_
+_Demonstrates the denial of traffic from host 172.16.3.7 (Attacker-BR-PC) to 192.168.x.x network_
 
 ```
 # Create Access Control List
@@ -204,7 +204,7 @@ AAA authentication, Authentication, Authorization and Accounting, refers to the 
 
 # 🗝 Industry Best Practices
 ## DHCP Snooping
-DHCP snooping protects against rogue DHCP (Dynamic Host Configuration Protocol) servers and DHCP-related attacks. It that only authorized DHCP servers can assign IP addresses to network devices. The switch builds a trusted database of valid DHCP servers by inspecting DHCP messages exchanged between clients and servers. The switch then uses this information to validate DHCP messages and prevent unauthorized DHCP servers from distributing IP addresses.  
+DHCP snooping protects against rogue DHCP (Dynamic Host Configuration Protocol) servers and DHCP-related attacks. It ensures that only authorized DHCP servers can assign IP addresses to network devices. The switch builds a trusted database of valid DHCP servers by inspecting DHCP messages exchanged between clients and servers. The switch then uses this information to validate DHCP messages and prevent unauthorized DHCP servers from distributing IP addresses.  
 
 ![image](https://github.com/Muneer44/Network-Security/assets/117259069/a8a79251-3357-49ac-9508-d76078a2c962)
 
