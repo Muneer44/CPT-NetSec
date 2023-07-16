@@ -22,14 +22,13 @@ In this project I simulate an industry-like network and showcase the implementat
 # Topology Network Design
 _The topology diagram represents the simulated network configuration. It provides an overview of the network devices and their interconnections._
 
-<img src="https://github.com/Muneer44/Security-Onion-Traffic-Analysis/assets/117259069/fd9aad62-e6d5-4281-ab0e-57646a641837" alt = "Network Topology Diagram" width="700" height="500">
-
+<img src="https://github.com/Muneer44/CPT-NetSec/assets/117259069/c9cac78a-678d-4657-8947-2d403e194cd0" alt = "Network Topology Diagram" width="900" height="500">
 
 # Network Connectivity Map
 _The network connectivity map illustrates the connectivity and relationships between different devices in the network. The map shows the physical connections between the devices, including the interfaces, IP addresses, and subnet masks used for communication. It helps to understand the overall network layout and aids in troubleshooting and maintaining the network infrastructure._
 
 
-<img src="https://github.com/Muneer44/Security-Onion-Traffic-Analysis/assets/117259069/37c0e2a2-7ec7-4b30-8aea-fc4f57d9d3d6" width="650" height="480">
+<img src="https://github.com/Muneer44/Security-Onion-Traffic-Analysis/assets/117259069/37c0e2a2-7ec7-4b30-8aea-fc4f57d9d3d6" alt = "Network Connectivity diagram" width="650" height="480">
 
 
 <details>
