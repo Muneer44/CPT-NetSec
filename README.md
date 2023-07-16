@@ -20,6 +20,8 @@ In this project, I simulate an industry-like network and showcase the implementa
  
 - ✨ [Conclusion](#conclusion) 
 
+---
+
 # Network Topology  
 _The topology diagram represents the simulated network configuration. It provides an overview of the network devices and their interconnections._
 
