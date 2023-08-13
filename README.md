@@ -33,7 +33,7 @@ _The network connectivity map illustrates the connectivity and relationships bet
 
 <img src="https://github.com/Muneer44/Security-Onion-Traffic-Analysis/assets/117259069/37c0e2a2-7ec7-4b30-8aea-fc4f57d9d3d6" alt = "Network Connectivity diagram" width="650" height="480">
 
-
+---
 <details>
 <summary><h1>🔗Advanced Network Configuration</h1></summary>
 
@@ -125,10 +125,12 @@ GW(config-router)# router-id <id>
 ```
 GW(confg)# router ospf <process-id>
 GW(config-router)# area <area-id> stub no-summary
-```
+``` 
 ---
 
-</details>
+</details>  
+
+### | *Expand the tab for detailed Network Configurations  
 
 ---
 
